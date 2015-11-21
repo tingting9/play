@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{width:200px;height:200px;border:1px dashed #ccc;display: block;}
+	</style>
+	<script>
+	function evfn(obj,ev,fn){
+		if(obj.addEventListener){
+			obj.addEventListener(ev,fn,false)
+		}else{
+			obj.attachEvent('on'+ev,fn);
+		}
+	}
+	window.onload=function(){
+		var oT=document.querySelector('.box');
+		evfn(window,'storage',function(){
+			var oBox=localStorage.a;
+
+			oT.style.background=oBox;
+				
+		});
+	}
+	</script>
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+</body>
+</html>
