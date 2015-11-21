@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;list-style: none;}
+	body{background:#ccc;}
+	.box{width:300px;height:300px;border-radius: 50%;position: relative;margin:100px auto;background:-webkit-radial-gradient(#fff 60%,#a5a5a5); box-shadow: 0 0 10px #fff;}
+	.box div{-webkit-transform-origin:center bottom;}
+	.hour{position: absolute;width:16px;height:100px;left:50%;top:50px;margin-left:-8px;background:red;}
+	.min{position: absolute;width:8px;height:120px;left:50%;top:30px;margin-left:-4px;background:#000;}
+	.sce{position: absolute;width:4px;height:130px;left:50%;top:20px;margin-left:-2px;background:Pink;}
+	.center{width:20px;height:20px;background:-webkit-radial-gradient(#e8e8e8,#a5a5a5);position: absolute;left:50%;top:50%;margin-left:-10px;margin-top:-10px;border-radius: 50%;}
+	.box li{position: absolute;width:4px;height:10px;left:50%;top:0;background:Pink;margin-left:-2px;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var oBox=document.querySelector('.box');
+			var oHour=document.querySelector('.hour');
+			var oMin=document.querySelector('.min');
+			var oSce=document.querySelector('.sce');
+			var aLi=document.querySelectorAll('.box li');
+
+			timer();
+			function timer(){
+				var oDate=new Date();
+				var oHourT=oDate.getHours();
+				var oMinT=oDate.getMinutes();
+				var oSceT=oDate.getSeconds();
+
+				var oH=oHourT%12;
+				var oM=oMinT*6;
+				var oS=oSceT*6;
+				console.log(oM)
+				oHour.style.WebkitTransform='rotate('+((oH+oDate.getMinutes()/60)*30)+'deg)';
+				oMin.style.WebkitTransform='rotate('+oM+'deg)';
+				oSce.style.WebkitTransform='rotate('+oS+'deg)';
+			};
+			setInterval(timer,1000);
+			for(var i=0; i<aLi.length; i++){
+
+			}
+		},false);
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="hour"></div>
+		<div class="min"></div>
+		<div class="sce"></div>
+		<div class="center"></div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>
